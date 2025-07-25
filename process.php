@@ -5,7 +5,10 @@
 </head>
 <body>
   <h1>Form Submission Result</h1>
-<?php
+<?php 
+if (!isset($_POST['good'])){
+    echo"No data summited.";
+}else{
 $errors = [];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -38,7 +41,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($course)) $errors[] = "Course is required.";
     if (empty($city)) $errors[] = "City is required.";
     if (empty($address)) $errors[] = "Address is required.";
-    if (empty($department)) $errors[] = "No department selected.";
 
     if (!empty($errors)) {
         echo "<div style='color: red;'>";
@@ -60,6 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST['department'])) {
         echo "<div style='color: red;'>";
                 echo "<p>No department selected.</p>";}
+}
 }
 ?>
 </body>

@@ -11,9 +11,10 @@
 <body>
     <h1>Student Registration Form</h1>
     <form method="post" action="validations.php">
+        <input type="hidden" name="good" value=" Hello">
 
         Student name: 
-        <input type="text" name="fname" placeholder="First Name">
+        <input type="text" name="fname" placeholder="First Name"> -
         <input type="text" name="lname" placeholder="Last Name"><br><br>
 
         Father's name: 
